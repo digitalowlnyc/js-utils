@@ -1,0 +1,22 @@
+{
+  "name": "blue-nest-js-utils",
+  "version": "0.0.1",
+  "description": "Javascript utilities",
+  "main": "utilities.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heliosbryan/js-utils"
+  },
+  "keywords": [
+    "timer",
+    "stopwatch"
+  ],
+  "author": "Bryan Mayor, Blue Nest Digital LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heliosbryan/js-utils/issues"
+  },
+  "homepage": "https://github.com/heliosbryan/js-utils/BlueNestTimerJS#readme"
+}
