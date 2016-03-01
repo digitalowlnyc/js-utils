@@ -89,3 +89,5 @@ UrlParser.parseFile = function(fullUrl) {
 		"extension": extension,
 	};
 }
+
+module.exports = UrlParser;
