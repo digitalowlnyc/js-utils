@@ -9,6 +9,8 @@ UrlParser.parse = function(fullUrl) {
 
     var domain = null;
     var protocol = null;
+    var port = null;
+
     var urlWithoutProtocol = null;
     if (url.indexOf("://") > -1) {
         var urlSubparts = url.split("://");
@@ -20,8 +22,14 @@ UrlParser.parse = function(fullUrl) {
     }
 
     var urlSubparts = urlWithoutProtocol.split("/");
-    domain = urlSubparts[0];
-    path = urlSubparts[1];
+    domain = urlSubparts.shift();
+    path = urlSubparts.join("/");
+
+    if(domain.indexOf(":") !== -1) {
+        var domainAndPort = domain.split(":");
+        domain = domainAndPort[0];
+        port = domainAndPort[1];
+    }
 
     var queryString = "";
     if(urlParts.length > 1)
@@ -52,6 +60,7 @@ UrlParser.parse = function(fullUrl) {
         url: url,
         path: path, // Everything after the domain portion
         domain: domain,
+        port: port,
         protocol: protocol,
         queryString: queryString,
         queryParameters: parsedParams, // object parameter vame->parameter value
